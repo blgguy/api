@@ -5,36 +5,8 @@ header("Content-Type: application/json; charset=UTF-8");
 **/
 
 $data = file_get_contents('https://api.thevirustracker.com/free-api?countryTotal=NG');
-//$arrayName = array('case' => 679, );
-/**
-$data = '{
-	"countrydata":[{
-		"info":{
-			"ourid"		:	116,
-			"title"		:	"Nigeria",
-			"code"		:	"NG",
-			"source"	:"https://thevirustracker.com/nigeria-coronavirus-information-ng" 
-		},
-		"total_cases"			:	1728,
-		"total_recovered"		:	307,
-		"total_unresolved"		:	0,
-		"total_deaths"			:	51,
-		"total_new_cases_today"	:	0,
-		"total_new_deaths_today"	:	0,
-		"total_active_cases"	:	1370,
-		"total_serious_cases"	:	2,
-		"total_danger_rank"		:	71
-}],
-		"stat" : "ok"}';
-		//$data = json_encode($data);
-		$data = str_replace("[", "", $data);
-		$data = str_replace("]", "", $data);
-		//var_dump($data);
-		/** **/
-
-		$data = str_replace("[", "", $data);
-
-		$data = str_replace("]", "", $data);
+$data = str_replace("[", "", $data);
+$data = str_replace("]", "", $data);
 $arr = json_decode($data, true);
 //$arr = json_decode($data);
 $CountryName = $arr['countrydata']['info']['title'];
@@ -47,35 +19,6 @@ $CountryNewCasesToday = $arr['countrydata']['total_new_cases_today'];
 $CountryNewDeathsToday = $arr['countrydata']['total_new_deaths_today'];
 $CountryActiveCases = $arr['countrydata']['total_active_cases'];
 
-echo "<b>".$CountryToatalCases."<b>";
-**/
-
-/** For all country.. 
-
-
-
-$data2 = '{
-	"result":[
-	{
-		"total_cases"			:	3230433,
-		"total_recovered"		:	1007136,
-		"total_unresolved"		:	2039891,
-		"total_deaths"			:	228394,
-		"total_new_cases_today"	:	12249,
-		"total_new_deaths_today"	:	364,
-		"total_active_cases"	:	1994903,
-		"total_serious_cases"	:	59800,
-		"total_danger_rank"		:	210,
-		"source":{
-			"url"	:	"https://thevirustracker.com"
-		}
-	}],
-		"stat" : "ok"}';
-
-		$data2 = str_replace("[", "", $data2);
-		$data2 = str_replace("]", "", $data2);
-		//var_dump($data);
-		/** **/
 $data2 = file_get_contents('https://thevirustracker.com/free-api?global=stats');
 
 		$data2 = str_replace("[", "", $data2);
@@ -90,7 +33,7 @@ $GlobalNewCasesToday = $arr2['results']['total_new_cases_today'];
 $GlobalDeathToday = $arr2['results']['total_new_deaths_today'];
 $GlobalActiveCases = $arr2['results']['total_active_cases'];
 
-echo "<br>".$GlobalSource."<br>$status<br>".$GlobalToatalCases;
+echo "<br>".$GlobalSource."<br>$s
 
 ?>
 <!DOCTYPE html>

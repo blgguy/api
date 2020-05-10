@@ -33,7 +33,7 @@ $GlobalNewCasesToday = $arr2['results']['total_new_cases_today'];
 $GlobalDeathToday = $arr2['results']['total_new_deaths_today'];
 $GlobalActiveCases = $arr2['results']['total_active_cases'];
 
-echo "<br>".$GlobalSource."<br>$s
+
 
 ?>
 <!DOCTYPE html>
